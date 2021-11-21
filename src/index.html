@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT Lander</title>
+  </head>
+  <body>
+    <header>
+      <a href="https://web3.storage">
+        <img src="https://web3.storage/w3storage-logo.svg" style="height:1.8rem" />
+      </a>
+      <nav>
+        <a href="./home.html">Home</a>
+        <span class="nav-current-page">Upload</span>
+        <a href="./gallery.html">Gallery</a>
+      
+      </nav>
+    </header>
+    <div id="app">
+      <div id="upload-ui">
+
+        <div id="upload-input-area">
+          <div id="welcome-message">
+            Welcome to the NFT Lander Gallery  
+            Drag an NFT or  select an NFT!
+          </div>
+          <div id="drop-area">
+            <form id="inputs">
+              <!-- The label for the hidden file input is styled as a button and can be clicked to select a file -->
+              <label class="select-button" for="file-input">Select an NFT </label>
+              <input class="hidden" type="file" id="file-input" accept=".jpeg,.jpg,.png,.gif,image/*" />
+
+              <img id="image-preview" class="preview-image" />
+
+              <div class="spacer"></div>
+              <label for="caption-input">Enter a Name</label> 
+              <input id="caption-input" placeholder="Enter a Name"/>
+
+
+              <button id="upload-button" disabled="true">Upload NFT</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="upload-in-progress" class="hidden" >
+          <h3>Uploading to Web3.Storage...</h3>
+          <img id="uploading-preview-image" class="preview-image" />
+          <div>
+            <span id="uploading-caption"></span>
+          </div>
+          <div id="upload-spinner">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+          <div id="output"></div>
+        </div>
+
+        <div id="upload-success" class="hidden">
+          <h3>🎉 Yay! Your NFT is uploaded complete.</h3>
+          <img class="preview-image" />
+
+          <div id="success-links">
+            <a id="success-gallery-link">View in the Gallery</a>
+            <a id="success-gateway-link" target="_external">View on IPFS<span class="fontawesome-share"></span></a>
+            <a href=".">Upload another NFT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="snackbar"></div>
+    <script type="module" src="./js/upload.js"></script>
+  </body>
+</html>
