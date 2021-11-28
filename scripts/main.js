@@ -1,9 +1,7 @@
-/* Moralis init code */
 const serverUrl = "YOUR_SERVER_URL_HERE";
 const appId = "YOUR_ID_HERE";
 Moralis.start({ serverUrl, appId });
 
-/* Authentication code */
 async function login() {
   let user = Moralis.User.current();
   if (!user) {
